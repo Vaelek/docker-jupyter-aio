@@ -5,6 +5,7 @@ LABEL maintainer="Vaelek"
 
 USER root
 
+ENV JUPYTER_ENABLE_LAB="yes"
 ENV ACCEPT_EULA="y"
 
 RUN apt-get update && \
@@ -20,4 +21,4 @@ RUN apt-get update && \
 
 USER $NB_UID
 
-RUN pip install ipython_sql pyodbc tensorflow keras
+RUN pip install ipython_sql pyodbc tensorflow keras psycopg2-binary
